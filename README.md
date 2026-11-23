@@ -132,14 +132,12 @@ New-Item -ItemType Directory -Force -Path $policyDir | Out-Null
 
 $policy = @{
     policies = @{
-        Extensions = @{
-            Install = @(
-                'https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi'
-                'https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi'
-                'https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi'
-                'https://addons.mozilla.org/firefox/downloads/latest/custom-speed-control-youtube/latest.xpi'
-                'https://addons.mozilla.org/firefox/downloads/latest/ambient-light-for-youtube/latest.xpi'
-            )
+        ExtensionSettings = @{
+            'uBlock0@raymondhill.net' = @{ installation_mode = 'normal_installed'; install_url = 'https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi' }
+            'sponsorBlocker@ajay.app' = @{ installation_mode = 'normal_installed'; install_url = 'https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi' }
+            '{762f9885-5a13-4abd-9c77-433dcd38b8fd}' = @{ installation_mode = 'normal_installed'; install_url = 'https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi' }
+            'customspeedyt@privacy.addon' = @{ installation_mode = 'normal_installed'; install_url = 'https://addons.mozilla.org/firefox/downloads/latest/custom-speed-control-youtube/latest.xpi' }
+            '{60493d8c-aec8-448e-a247-5d2cfa047d69}' = @{ installation_mode = 'normal_installed'; install_url = 'https://addons.mozilla.org/firefox/downloads/latest/ambient-light-for-youtube/latest.xpi' }
         }
     }
 } | ConvertTo-Json -Depth 8
@@ -173,14 +171,12 @@ sudo mkdir -p "$POLICY_DIR"
 sudo tee "$POLICY_FILE" >/dev/null <<'JSON'
 {
   "policies": {
-    "Extensions": {
-      "Install": [
-        "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
-        "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi",
-        "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi",
-        "https://addons.mozilla.org/firefox/downloads/latest/custom-speed-control-youtube/latest.xpi",
-        "https://addons.mozilla.org/firefox/downloads/latest/ambient-light-for-youtube/latest.xpi"
-      ]
+    "ExtensionSettings": {
+      "uBlock0@raymondhill.net": { "installation_mode": "normal_installed", "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi" },
+      "sponsorBlocker@ajay.app": { "installation_mode": "normal_installed", "install_url": "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi" },
+      "{762f9885-5a13-4abd-9c77-433dcd38b8fd}": { "installation_mode": "normal_installed", "install_url": "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi" },
+      "customspeedyt@privacy.addon": { "installation_mode": "normal_installed", "install_url": "https://addons.mozilla.org/firefox/downloads/latest/custom-speed-control-youtube/latest.xpi" },
+      "{60493d8c-aec8-448e-a247-5d2cfa047d69}": { "installation_mode": "normal_installed", "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ambient-light-for-youtube/latest.xpi" }
     }
   }
 }
@@ -219,14 +215,12 @@ sudo mkdir -p "$POLICY_DIR"
 sudo tee "$POLICY_FILE" >/dev/null <<'JSON'
 {
   "policies": {
-    "Extensions": {
-      "Install": [
-        "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
-        "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi",
-        "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi",
-        "https://addons.mozilla.org/firefox/downloads/latest/custom-speed-control-youtube/latest.xpi",
-        "https://addons.mozilla.org/firefox/downloads/latest/ambient-light-for-youtube/latest.xpi"
-      ]
+    "ExtensionSettings": {
+      "uBlock0@raymondhill.net": { "installation_mode": "normal_installed", "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi" },
+      "sponsorBlocker@ajay.app": { "installation_mode": "normal_installed", "install_url": "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi" },
+      "{762f9885-5a13-4abd-9c77-433dcd38b8fd}": { "installation_mode": "normal_installed", "install_url": "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi" },
+      "customspeedyt@privacy.addon": { "installation_mode": "normal_installed", "install_url": "https://addons.mozilla.org/firefox/downloads/latest/custom-speed-control-youtube/latest.xpi" },
+      "{60493d8c-aec8-448e-a247-5d2cfa047d69}": { "installation_mode": "normal_installed", "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ambient-light-for-youtube/latest.xpi" }
     }
   }
 }
